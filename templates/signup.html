@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+            <!-- CSS supporting files -->
+            <link rel="stylesheet" href="../static/files/css/bootstrap.min.css"  rel="stylesheet">
+            <link rel="stylesheet" href="../static/files/css/lightslider.css">
+            <link rel="stylesheet" href="../static/files/css/style.css">
+            <!-- JS supporting files -->
+            <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+            <script src="../static/files/js/jquery.js"></script>
+            <script src="../static/files/js/lightslider.js"></script>
+            <script src="../static/files/js/script.js"></script>
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            {% include 'navbar.html' %}
+            <br>
+            <section class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card shadow p-2">
+                        <h3>Create an Account</h3>
+                        <span style="color: green;">{{success}}</span>
+                        <form action="/signup" method="POST">
+                            <input type="text" placeholder="Your Username" class="form-control" name="username" required> <br>
+                            <input type="email" placeholder="Your Email" class="form-control" name="email" required> <br>
+                            <input type="tel" name="phone" placeholder="Your Phone: +25470000000" class="form-control" required> <br>
+                            <input type="password" class="form-control" placeholder="Your Password" name="password1" required> <br>
+                            <span style="color: red;">{{error}}</span>
+                            <input type="password" class="form-control" placeholder="Confirm Password" name="password2" required> <br>
+                            <span style="color: red;">{{error1}}</span> <br>
+                            <input type="submit" class="btn btn-info" value="Sign Up">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </body>
+</html>
+
+     <!-- key things a programmer should know when creating/doing a project -->
+<!-- model (where we store our data) -table users -->
+<!-- view (This is what users can see) -signup.html -->
+<!-- controls(This is what connects our view to our model) -flask(app.py) -->

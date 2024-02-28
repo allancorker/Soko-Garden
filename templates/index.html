@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Soko Garden</title>
+        <!-- CSS supporting files -->
+        <link rel="stylesheet" href="../static/files/css/bootstrap.min.css"  rel="stylesheet">
+        <link rel="stylesheet" href="../static/files/css/lightslider.css">
+        <link rel="stylesheet" href="../static/files/css/style.css">
+        <!-- JS supporting files -->
+        <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/files/js/jquery.js"></script>
+        <script src="../static/files/js/lightslider.js"></script>
+        <script src="../static/files/js/script.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- using jinja2 to connect navbar.html to index.html -->
+            {% include 'navbar.html' %}
+            <br>
+            {% include 'carousel.html' %}
+            
+            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Smartphones</h2>
+            <section class="slider px-4">
+                <ul class="cs-hidden autoWidth">
+                    {% for record in category_smartphones %}
+                    <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/single_item/{{record [0]}}" class="buy-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{record [1]}} <br>
+                                <b class="text-warning">KES {{record [3]}}</b>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Clothes</h2>            
+            <section class="slider px-4">
+                <ul class="cs-hidden autoWidth">
+                    {% for record in category_Clothes %}
+                    <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/single_item/{{record [0]}}" class="buy-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{record [1]}} <br>
+                                <b class="text-warning">KES {{record [3]}}</b>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Electronics</h2>
+            <section class="slider px-4">
+                <ul class="cs-hidden autoWidth">
+                    {% for record in category_Electronics %}
+                    <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/single_item/{{record [0]}}" class="buy-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{record [1]}} <br>
+                                <b class="text-warning">KES {{record [3]}}</b>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Utensils</h2>
+            <section class="slider px-4">
+                <ul class="cs-hidden autoWidth">
+                    {% for record in category_Utensils %}
+                    <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/single_item/{{record [0]}}" class="buy-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{record [1]}} <br>
+                                <b class="text-warning">KES {{record [3]}}</b>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Others</h2>
+            <section class="slider px-4">
+                <ul class="cs-hidden autoWidth">
+                    {% for record in category_Other %}
+                    <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/single_item/{{record [0]}}" class="buy-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{record [1]}} <br>
+                                <b class="text-warning">KES {{record [3]}}</b>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+
+        </div>
+
+    </body>
+</html>

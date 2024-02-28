@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Merchants</title>
+        <!-- CSS supporting files -->
+        <link rel="stylesheet" href="../static/files/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/files/css/lightslider.css">
+        <link rel="stylesheet" href="../static/files/css/style.css">
+        <!-- JS supporting files -->
+        <script src="../static/files/js/bootstrap.min.js"></script>
+        <script src="../static/files/js/jquery.js"></script>
+        <script src="../static/files/js/lightslider.js"></script>
+        <script src="../static/files/js/script.js"></script>
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            {% include 'navbar.html' %}
+            <div class="row">
+                <div class="col-md-6 ms-5">
+                    <div class="card shadow p-2">
+                        <h3>{{feedback}}</h3>
+                        <form action="/merchant" method="POST">
+                            <label for="">First Name</label> <br>
+                            <input type="text" class="form-control" name="firstname" required> 
+
+                            <label for="">Second Name</label> <br>
+                            <input type="text" class="form-control" name="secondname" required>
+
+                            <label for="">Last Name</label> <br>
+                            <input type="text" class="form-control" name="lastname" required>
+
+                            <label for="">National ID</label> <br>
+                            <input type="number" class="form-control" name="national_ID" required>
+
+                            <label for="">County</label> <br>
+                            <input type="text" class="form-control" name="county" required> <br>
+
+                            <input type="submit" class="btn btn-success" value="Add Merchant" required> <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include 'footer.html' %}
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- CSS supporting files -->
+    <link rel="stylesheet" href="../static/files/css/bootstrap.min.css"  rel="stylesheet">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+    <!-- JS supporting files -->
+    <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <!-- using jinja2 to connect navbar.html to index.html -->
+        {% include 'navbar.html' %}
+        <br>
+        <section class="row">
+          <div class="col-md-4">
+            <img src="../static/images/{{product [5]}}" alt="image gotten form DB" class="img-thumbnail shadow">
+            <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ product [1]}}</h2>
+          </div>
+          <div class="col-md-8">
+            <p class="text-dark">{{product [2]}}</p>
+            <b class="text-warning">KES {{product [3]}}</b> <br> 
+            <b class="text-danger">Category: {{product [4]}}</b>
+            <br>
+            {% if session['key'] %}
+              <div class="coard shadow p-3 text-center" style="background-color: coral;">
+                <h3>Pay Using Mpesa</h3>
+                <form action="/mpesa" method="POST">
+                  <input type="tel" placeholder="Enter Your Phone Number: 254700000000" class="form-control" name="phone" required> <br>
+                  <input type="number" name="amount" class="form-control" value="{{product [3]}}" readonly> <br>
+                  <input type="submit" value="Pay Now" class="btn btn-dark">
+                </form>
+              </div>
+            {% else %}
+              <h5>Please Sign In to make Payment</h5>
+              <a href="/login" class="btn btn-info btn-sm">Sign In Here</a>
+            {% endif %}
+          </div>
+        </section>
+    </div>
+    <br>
+
+    <h3>You may also like</h3>
+   
+
+    {% include 'footer.html' %}
+
+</body>
+</html>

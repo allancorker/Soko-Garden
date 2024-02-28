@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload</title>
+        <!-- CSS supporting files -->
+        <link rel="stylesheet" href="../static/files/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/files/css/lightslider.css">
+        <link rel="stylesheet" href="../static/files/css/style.css">
+        <!-- JS supporting files -->
+        <script src="../static/files/js/bootstrap.min.js"></script>
+        <script src="../static/files/js/jquery.js"></script>
+        <script src="../static/files/js/lightslider.js"></script>
+        <script src="../static/files/js/script.js"></script>
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            {% include 'navbar.html' %}
+            <div class="row">
+                <div class="col-md-6 ms-5">
+                    <div class="card shadow p-2">
+                        <h5 class="m-2">{{message}}</h5>
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            <!-- action att specifies a url which the form's data is sent when submitted. Method att tells the browser how to send data to a web server. enctype att allows upload of non-text data like images, audio etc-->
+                            <label for="">Product Name</label> <br>
+                            <input type="text" class="form-control" name="product_name" required> 
+
+                            <label for="">Product Description</label> <br>
+                            <textarea cols="30" rows="3" class="form-control" name="product_desc" required></textarea>
+
+                            <label for="">Product Cost</label> <br>
+                            <input type="number" id="cost" class="form-control" name="product_cost" required>
+
+                            <label for="">Products Category</label> <br>
+                            <select class="form-control" name="product_category">
+                                <option value="Electronics">Electronics</option>
+                                <option value="Clothes">Clothes</option>
+                                <option value="Utensils">Utensils</option>
+                                <option value="Smartphones">Smartphones</option>
+                                <option value="Other">Other</option>
+                            </select> <br>
+
+                            <label for="">Product Image</label> 
+                            <input type="file" class="form-control" name="product_image_name" required>
+                            <br>
+                            <input type="submit" value="Add/Upload Product" class="btn btn-success" required> <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

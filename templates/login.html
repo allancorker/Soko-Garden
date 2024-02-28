@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log In</title>
+        <!-- CSS supporting files -->
+        <link rel="stylesheet" href="../static/files/css/bootstrap.min.css"  rel="stylesheet">
+        <link rel="stylesheet" href="../static/files/css/lightslider.css">
+        <link rel="stylesheet" href="../static/files/css/style.css">
+        <!-- JS supporting files -->
+        <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/files/js/jquery.js"></script>
+        <script src="../static/files/js/lightslider.js"></script>
+        <script src="../static/files/js/script.js"></script>
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            <!-- using jinja2 to connect navbar.html to index.html -->
+            {% include 'navbar.html' %} <br>
+            <section class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card shadow p-2 text-center">
+                        <h3 class="text-info">Log In</h3>
+                        <span style="color: brown;">{{error}}</span>
+                        <form action="/login" method="POST">
+                            <input type="text" class="form-control" placeholder="Your Username" name="username" required> <br>
+                            <input type="password" placeholder="Your Password" class="form-control" name="password1" required> <br>
+                            <input type="submit" class="btn btn-info" value="Log In"> <br>
+                        </form>
+                        <a href="/signup" class="text-info">Don't have an account? Create one</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </body>
+</html>
